@@ -1,50 +1,113 @@
-# Welcome to your Expo app 👋
+# ☀️ FalaSol - Comunicação Alternativa e Aumentativa
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bem-vindo ao repositório do **FalaSol**. Este é um projeto desenvolvido com **Expo** focado em acessibilidade e inclusão social.
 
-## Get started
+## 📱 Sobre o Projeto
 
-1. Install dependencies
+O **FalaSol** é uma ferramenta de **Comunicação Alternativa e Aumentativa (CAA)**. O nome une a capacidade de expressão ("Fala") com a clareza e brilho ("Sol"), simbolizando o objetivo de dar luz e voz a quem precisa.
 
-   ```bash
-   npm install
-   ```
+### ❓ O Problema
+Muitas pessoas enfrentam barreiras na comunicação verbal devido a condições diversas (como TEA, paralisia cerebral, afasia, entre outras). A falta de ferramentas acessíveis e práticas no dia a dia pode gerar isolamento social e dificultar a autonomia desses indivíduos.
 
-2. Start the app
+### 💡 A Solução
+O FalaSol existe para quebrar essas barreiras. Ele oferece uma interface digital amigável que permite ao usuário expressar necessidades, sentimentos e pensamentos através de cartões visuais e síntese de voz, transformando o dispositivo móvel em um poderoso aliado para a inclusão.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📥 Download
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Você pode baixar a versão mais recente do aplicativo (APK para Android) clicando no botão abaixo:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+[**🔗 CLIQUE AQUI PARA BAIXAR O FALASOL (v1.0)**](LINK_DO_SEU_RELEASE_AQUI)
 
-## Get a fresh project
+> *Nota: Caso o link acima ainda não esteja disponível, verifique a aba "Releases" aqui no GitHub.*
 
-When you're ready, run:
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto foi construído utilizando tecnologias modernas para garantir performance e compatibilidade multiplataforma:
+
+* **[React Native](https://reactnative.dev/):** Framework principal para desenvolvimento mobile.
+* **[Expo](https://expo.dev):** Plataforma para facilitar a criação, build e deploy de apps universais.
+* **JavaScript/TypeScript:** Linguagem de programação.
+
+---
+
+## 💻 Guia de Desenvolvimento (Devs)
+
+Se você é um desenvolvedor e quer contribuir ou rodar o projeto localmente, siga os passos abaixo.
+
+### Pré-requisitos
+* Node.js instalado.
+* Gerenciador de pacotes `npm` ou `yarn`.
+
+### 1. Instalar dependências
 
 ```bash
-npm run reset-project
+npm install
+
+---
+
+Perfeito! "FalaSol" é um nome excelente, passa uma ideia de clareza e luz na comunicação.
+
+Aqui está o `README.md` atualizado com o nome correto e uma pequena adaptação no texto de apresentação para combinar com a identidade do novo nome:
+
+```markdown
+# ☀️ FalaSol - Comunicação Alternativa e Aumentativa
+
+Bem-vindo ao repositório do **FalaSol**. Este é um projeto desenvolvido com **Expo** focado em acessibilidade e inclusão social.
+
+## 📱 Sobre o Projeto
+
+O **FalaSol** é uma ferramenta de **Comunicação Alternativa e Aumentativa (CAA)**. O nome une a capacidade de expressão ("Fala") com a clareza e brilho ("Sol"), simbolizando o objetivo de dar luz e voz a quem precisa.
+
+### ❓ O Problema
+Muitas pessoas enfrentam barreiras na comunicação verbal devido a condições diversas (como TEA, paralisia cerebral, afasia, entre outras). A falta de ferramentas acessíveis e práticas no dia a dia pode gerar isolamento social e dificultar a autonomia desses indivíduos.
+
+### 💡 A Solução
+O FalaSol existe para quebrar essas barreiras. Ele oferece uma interface digital amigável que permite ao usuário expressar necessidades, sentimentos e pensamentos através de cartões visuais e síntese de voz, transformando o dispositivo móvel em um poderoso aliado para a inclusão.
+
+---
+
+## 📥 Download
+
+Você pode baixar a versão mais recente do aplicativo (APK para Android) clicando no botão abaixo:
+
+[**🔗 CLIQUE AQUI PARA BAIXAR O FALASOL (v1.0)**](LINK_DO_SEU_RELEASE_AQUI)
+
+> *Nota: Caso o link acima ainda não esteja disponível, verifique a aba "Releases" aqui no GitHub.*
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto foi construído utilizando tecnologias modernas para garantir performance e compatibilidade multiplataforma:
+
+* **[React Native](https://reactnative.dev/):** Framework principal para desenvolvimento mobile.
+* **[Expo](https://expo.dev):** Plataforma para facilitar a criação, build e deploy de apps universais.
+* **TypeScript:** Linguagem de programação.
+
+---
+
+## 💻 Guia de Desenvolvimento (Devs)
+
+Se você é um desenvolvedor e quer contribuir ou rodar o projeto localmente, siga os passos abaixo.
+
+### Pré-requisitos
+* Node.js instalado.
+* Gerenciador de pacotes `npm` ou `yarn`.
+
+### 1. Instalar dependências
+
+```bash
+npm install
+
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Rodar o aplicativo
 
-## Learn more
+```bash
+npx expo start
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
