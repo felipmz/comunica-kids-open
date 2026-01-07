@@ -41,3 +41,14 @@ app-example
 # generated native folders
 /ios
 /android
+
+# --- ADIÇÕES IMPORTANTES ---
+
+# 1. Arquivos de Instalação (Você gerou um APK agora, não suba ele!)
+*.apk
+*.aab
+*.ipa
+
+# 2. Configurações de Editor (Para não subir suas configs pessoais do VS Code)
+.vscode/
+.idea/
