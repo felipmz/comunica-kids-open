@@ -6,7 +6,6 @@ import { useStore } from '../src/store/useStore';
 
 export default function PerfilScreen() {
   const router = useRouter();
-  // Puxando a nova função resetarTudo
   const { perfil, atualizarPerfil, resetarTudo } = useStore();
   const [form, setForm] = useState(perfil);
 
@@ -50,7 +49,6 @@ export default function PerfilScreen() {
     router.back();
   };
 
-  // --- LÓGICA DO RESET ---
   const handleResetarGeral = () => {
     Alert.alert(
       "⚠️ ZONA DE PERIGO - DESENVOLVEDOR",
@@ -63,7 +61,7 @@ export default function PerfilScreen() {
           onPress: () => {
             resetarTudo();
             Alert.alert("Reset Concluído", "O aplicativo foi restaurado para o padrão.");
-            router.replace('/'); // Volta para o início forçando refresh
+            router.replace('/'); 
           }
         }
       ]
@@ -72,16 +70,13 @@ export default function PerfilScreen() {
 
   return (
     <View style={styles.container}>
-      {/* ScrollView agora engloba tudo, inclusive o Header */}
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         
-        {/* Header agora está DENTRO do ScrollView */}
         <View style={styles.header}>
           <Text style={styles.tituloHeader}>Área dos responsáveis</Text>
           <View style={{width: 50}} /> 
         </View>
 
-        {/* View wrapper para manter o padding do conteúdo original */}
         <View style={styles.scroll}>
           
           <View style={styles.areaFoto}>
@@ -96,25 +91,57 @@ export default function PerfilScreen() {
           </View>
 
           <Text style={styles.secaoTitulo}>DADOS DA CRIANÇA</Text>
-          <TextInput style={styles.input} placeholder="Nome da Criança" value={form.nomeCrianca} onChangeText={(t) => setForm({...form, nomeCrianca: t})}/>
-          <TextInput style={styles.input} placeholder="Idade" value={form.idade} onChangeText={(t) => setForm({...form, idade: t})}/>
-          <TextInput style={styles.input} placeholder="Endereço Completo" value={form.endereco} onChangeText={(t) => setForm({...form, endereco: t})}/>
-
-          <Text style={styles.secaoTitulo}>RESPONSÁVEL 1</Text>
-          <TextInput style={styles.input} placeholder="Nome responsável 1" value={form.nomeMae} onChangeText={(t) => setForm({...form, nomeMae: t})}/>
+          
+          <Text style={styles.label}>Nome da Criança</Text>
           <TextInput 
             style={styles.input} 
-            placeholder="(00) 00000-0000" 
+            value={form.nomeCrianca} 
+            onChangeText={(t) => setForm({...form, nomeCrianca: t})}
+          />
+
+          <Text style={styles.label}>Idade</Text>
+          <TextInput 
+            style={styles.input} 
+            value={form.idade} 
+            onChangeText={(t) => setForm({...form, idade: t})}
+          />
+
+          <Text style={styles.label}>Endereço Completo</Text>
+          <TextInput 
+            style={styles.input} 
+            value={form.endereco} 
+            onChangeText={(t) => setForm({...form, endereco: t})}
+          />
+
+          <Text style={styles.secaoTitulo}>RESPONSÁVEL 1</Text>
+
+          <Text style={styles.label}>Nome responsável 1</Text>
+          <TextInput 
+            style={styles.input} 
+            value={form.nomeMae} 
+            onChangeText={(t) => setForm({...form, nomeMae: t})}
+          />
+
+          <Text style={styles.label}>Telefone / Celular</Text>
+          <TextInput 
+            style={styles.input} 
             keyboardType="phone-pad"
             value={form.contatoMae}
             onChangeText={(t) => setForm({...form, contatoMae: formatarTelefone(t)})}
           />
 
           <Text style={styles.secaoTitulo}>RESPONSÁVEL 2</Text>
-          <TextInput style={styles.input} placeholder="Nome responsável 2" value={form.nomePai} onChangeText={(t) => setForm({...form, nomePai: t})}/>
+
+          <Text style={styles.label}>Nome responsável 2</Text>
           <TextInput 
             style={styles.input} 
-            placeholder="(00) 00000-0000" 
+            value={form.nomePai} 
+            onChangeText={(t) => setForm({...form, nomePai: t})}
+          />
+
+          <Text style={styles.label}>Telefone / Celular</Text>
+          <TextInput 
+            style={styles.input} 
             keyboardType="phone-pad"
             value={form.contatoPai}
             onChangeText={(t) => setForm({...form, contatoPai: formatarTelefone(t)})}
@@ -123,9 +150,10 @@ export default function PerfilScreen() {
           <Text style={[styles.secaoTitulo, {color: '#D32F2F'}]}>SEGURANÇA (SENHA DE ACESSO)</Text>
           <View style={styles.boxSenha}>
             <Text style={styles.dicaSenha}>Altere aqui a senha para entrar nesta tela.</Text>
+            
+            <Text style={[styles.label, {textAlign: 'center', marginTop: 10}]}>Nova Senha (4 dígitos)</Text>
             <TextInput 
               style={[styles.input, {borderColor: '#EF9A9A', borderWidth: 2, textAlign: 'center', fontSize: 20, letterSpacing: 5}]} 
-              placeholder="1234" 
               keyboardType="numeric"
               maxLength={4}
               value={form.senhaAdmin}
@@ -143,7 +171,6 @@ export default function PerfilScreen() {
             <Text style={styles.txtSalvar}>SALVAR TUDO</Text>
           </TouchableOpacity>
 
-          {/* --- BOTÃO DE RESET (ZONA DE PERIGO) --- */}
           <View style={{marginTop: 50, borderTopWidth: 1, borderColor: '#ddd', paddingTop: 20}}>
             <Text style={{textAlign: 'center', color: '#888', marginBottom: 10, fontSize: 12}}>ÁREA AVANÇADA</Text>
             <TouchableOpacity style={[styles.btnSalvar, { backgroundColor: '#d50101e2' }]} onPress={handleResetarGeral}>
@@ -163,12 +190,16 @@ const styles = StyleSheet.create({
   header: { padding: 20, paddingTop: 50, backgroundColor: '#fff', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', elevation: 2 },
   voltar: { fontSize: 24, color: '#2196F3', fontWeight: 'bold' },
   tituloHeader: { fontSize: 20, fontWeight: 'bold' },
-  scroll: { padding: 20 }, // Usado agora na View interna
+  scroll: { padding: 20 }, 
   areaFoto: { alignItems: 'center', marginBottom: 20 },
   botaoFoto: { width: 120, height: 120, borderRadius: 60, backgroundColor: '#FFF9C4', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', borderWidth: 3, borderColor: '#fff' },
   fotoPerfil: { width: '100%', height: '100%' },
   dicaFoto: { marginTop: 10, color: '#888', fontSize: 12 },
   secaoTitulo: { marginTop: 20, marginBottom: 10, color: '#2196F3', fontWeight: 'bold', fontSize: 14 },
+  
+  // Estilo novo para o texto acima da caixa
+  label: { fontSize: 16, fontWeight: '600', color: '#333', marginBottom: 5, marginLeft: 2 },
+
   input: { backgroundColor: '#fff', padding: 15, borderRadius: 10, marginBottom: 10, borderWidth: 1, borderColor: '#ddd', fontSize: 16 },
   boxSenha: { backgroundColor: '#FFEBEE', padding: 10, borderRadius: 10, borderWidth: 1, borderColor: '#FFCDD2' },
   dicaSenha: { color: '#D32F2F', marginBottom: 5, fontSize: 12, textAlign: 'center' },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { Modal, View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvoidingView, Platform } from 'react-native';
 
 interface ModalSenhaProps {
   visivel: boolean;
@@ -23,7 +23,11 @@ export const ModalSenha = ({ visivel, aoFechar, aoSucesso, senhaCorreta }: Modal
 
   return (
     <Modal visible={visivel} transparent animationType="fade" onRequestClose={aoFechar}>
-      <View style={styles.overlay}>
+      {/* Mantendo a correção do teclado */}
+      <KeyboardAvoidingView 
+        style={styles.overlay} 
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+      >
         <View style={styles.caixa}>
           <Text style={styles.titulo}>Acesso dos responsáveis 🔒</Text>
           <Text style={styles.texto}>Digite a senha (Padrão: 1234)</Text>
@@ -34,6 +38,7 @@ export const ModalSenha = ({ visivel, aoFechar, aoSucesso, senhaCorreta }: Modal
             maxLength={4}
             secureTextEntry // Esconde os números
             placeholder="****"
+            placeholderTextColor="#999999" // <--- MUDANÇA: Cinza para diferenciar
             value={input}
             onChangeText={setInput}
             autoFocus={visivel}
@@ -48,7 +53,7 @@ export const ModalSenha = ({ visivel, aoFechar, aoSucesso, senhaCorreta }: Modal
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 };
@@ -58,7 +63,8 @@ const styles = StyleSheet.create({
   caixa: { width: 300, backgroundColor: '#fff', borderRadius: 15, padding: 20, alignItems: 'center' },
   titulo: { fontSize: 20, fontWeight: 'bold', marginBottom: 10 },
   texto: { color: '#666', marginBottom: 15 },
-  input: { fontSize: 24, borderBottomWidth: 2, borderColor: '#2196F3', width: 150, textAlign: 'center', marginBottom: 20, padding: 5, letterSpacing: 5 },
+  // Mantendo a cor preta para o texto digitado
+  input: { fontSize: 24, borderBottomWidth: 2, borderColor: '#2196F3', width: 150, textAlign: 'center', marginBottom: 20, padding: 5, letterSpacing: 5, color: '#000000' },
   botoes: { flexDirection: 'row', gap: 10, width: '100%' },
   btnCancelar: { flex: 1, padding: 12, backgroundColor: '#eee', borderRadius: 8, alignItems: 'center' },
   btnEntrar: { flex: 1, padding: 12, backgroundColor: '#2196F3', borderRadius: 8, alignItems: 'center' },
