@@ -122,7 +122,7 @@ export default function PerfilScreen() {
             onChangeText={(t) => setForm({...form, nomeMae: t})}
           />
 
-          <Text style={styles.label}>Telefone / Celular</Text>
+          <Text style={styles.label}>Telefone </Text>
           <TextInput 
             style={styles.input} 
             keyboardType="phone-pad"
@@ -139,7 +139,7 @@ export default function PerfilScreen() {
             onChangeText={(t) => setForm({...form, nomePai: t})}
           />
 
-          <Text style={styles.label}>Telefone / Celular</Text>
+          <Text style={styles.label}>Telefone</Text>
           <TextInput 
             style={styles.input} 
             keyboardType="phone-pad"
