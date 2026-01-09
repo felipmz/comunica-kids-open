@@ -14,7 +14,7 @@ O FalaSol existe para quebrar essas barreiras. Ele oferece uma interface digital
 
 ---
 
-## 📥 Download
+##  Download
 
 Você pode baixar a versão mais recente do aplicativo (APK para Android) clicando no botão abaixo:
 
@@ -24,7 +24,7 @@ Você pode baixar a versão mais recente do aplicativo (APK para Android) clican
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 Este projeto foi construído utilizando tecnologias modernas para garantir performance e compatibilidade multiplataforma:
 
@@ -34,7 +34,7 @@ Este projeto foi construído utilizando tecnologias modernas para garantir perfo
 
 ---
 
-## 💻 Guia de Desenvolvimento (Devs)
+## Guia de Desenvolvimento (Devs)
 
 Se você é um desenvolvedor e quer contribuir ou rodar o projeto localmente, siga os passos abaixo.
 
